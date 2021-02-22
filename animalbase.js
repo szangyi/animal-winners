@@ -113,7 +113,7 @@ function selectSort(event) {
 function sortList(sortBy) {
   let sortedList = allAnimals;
 
-  sortedList = sortedList.sort(sortByPropert);
+  sortedList = sortedList.sort(sortByProperty);
 
   function sortByProperty(animalA, animalB) {
     console.log(`sortBy is ${sortBy}`);
