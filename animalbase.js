@@ -106,21 +106,37 @@ function buildList() {
 //generic sort function
 function selectSort(event) {
   const sortBy = event.target.dataset.sort;
-  console.log(`User selected ${sortBy}`);
-  sortList(sortBy);
+  const sortDir = event.target.dataset.sortDirection;
+
+  //toggle direction
+  if (sortDir === "asc") {
+    event.target.dataset.sortDirection = "desc";
+  } else {
+    event.target.dataset.sortDirection = "asc";
+  }
+
+  console.log(`User selected ${sortBy} - ${sortDir}`);
+  sortList(sortBy, sortDir);
 }
 
-function sortList(sortBy) {
+function sortList(sortBy, sortDir) {
   let sortedList = allAnimals;
+
+  let direction = 1;
+  if (sortDir === "desc") {
+    direction = -1;
+  } else {
+    direction = 1;
+  }
 
   sortedList = sortedList.sort(sortByProperty);
 
   function sortByProperty(animalA, animalB) {
     console.log(`sortBy is ${sortBy}`);
     if (animalA[sortBy] < animalB[sortBy]) {
-      return -1;
+      return -1 * direction;
     } else {
-      return 1;
+      return 1 * direction;
     }
   }
 
