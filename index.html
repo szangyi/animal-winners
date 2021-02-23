@@ -43,6 +43,9 @@
     <table id="list">
       <thead>
         <tr id="sorting">
+          <th data-action="sort" data-sort-direction="asc" data-sort="winner">
+            Winner
+          </th>
           <th data-action="sort" data-sort-direction="asc" data-sort="star">
             Star
           </th>
@@ -67,6 +70,7 @@
 
     <template id="animal">
       <tr>
+        <td data-field="winner" data-winner="false"></td>
         <td data-field="star">☆</td>
         <td data-field="name">NAME</td>
         <td data-field="type">TYPE</td>
