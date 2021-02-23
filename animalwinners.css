@@ -42,3 +42,16 @@ td[data-field="winner"]::after {
 td[data-field="winner"][data-winner="false"]::after {
   filter: grayscale(1);
 }
+
+.modal {
+  width: 50vw;
+  height: 30vh;
+  background-color: red;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hide {
+  display: none;
+}
